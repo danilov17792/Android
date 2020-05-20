@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Урок 1</string>
-    <string name="t_1">Вертикальная ориентация 1</string>
-    <string name="t_2">Вертикальная ориентация 2</string>
+    <string name="app_name">Погода</string>
+    <string name="this_town">Город</string>
+    <string name="setting">Настройки</string>
+    <string name="temperature">Температура</string>
+    <string name="pressure">Давление</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="search">Город или область</string>
 </resources>

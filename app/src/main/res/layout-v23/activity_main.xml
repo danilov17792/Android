@@ -11,11 +11,12 @@
         android:id="@+id/textView_town"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="436dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="40dp"
         android:text="@string/this_town"
         android:textColor="@color/this_town"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +27,7 @@
         android:layout_marginEnd="16dp"
         android:background="#00FF0000"
         android:clickable="false"
-        android:drawableBottom="@drawable/setting_icon"
+        android:foreground="@drawable/setting_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_town" />
 
