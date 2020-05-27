@@ -20,26 +20,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/checkBox_pressure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pressure"
-            android:textColor="@color/pressure" />
-
         <CheckBox
             android:id="@+id/checkBox_wind_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/wind_speed"
-            android:text="@string/wind_speed" />
+            android:text="@string/wind_speed"
+            android:theme="@style/MyCheckBox"/>
+
+        <CheckBox
+            android:id="@+id/checkBox_pressure"
+            style="@android:style/Widget.Holo.CompoundButton.CheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pressure"
+            android:theme="@style/MyCheckBox"/>
+
     </LinearLayout>
 
     <ListView
         android:id="@+id/list_view_city_search"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-
     </ListView>
 </LinearLayout>

@@ -11,24 +11,13 @@
         android:id="@+id/textView_town"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="436dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="92dp"
         android:text="@string/this_town"
         android:textColor="@color/this_town"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_setting"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:background="#00FF0000"
-        android:clickable="false"
-        android:drawableBottom="@drawable/setting_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_town" />
 
     <TextView
         android:id="@+id/textView_temperature"
@@ -62,5 +51,25 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/textView_pressure"
         app:layout_constraintTop_toBottomOf="@+id/textView_pressure" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/search_icon"
+        android:clickable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_setting" />
+
+    <Button
+        android:id="@+id/button_setting"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/setting_icon"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_town" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,74 +1,105 @@
 package com.example.androidgeek;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button btnSearch;
+    TextView tvViewCity;
+    TextView tvViewCityTemp;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-public class MainActivity extends AppCompatActivity {
-    private ListView lv;
-    ArrayAdapter<String> adapter;
-    EditText inputSearch;
-    ArrayList<HashMap<String, String>> words;
+    private final String TAG = this.getClass().getSimpleName();
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_city_selection);
-
-        String words[] = {"Москва", "Санкт-Петербург", "Самара", "Нижний Новгород", "Владимир",
-                "Тольятти", "Казань", "Ставрополь", "Екатеринбург", "Тюмень"};
-
-        lv = (ListView) findViewById(R.id.list_view_city_search);
-        inputSearch = (EditText) findViewById(R.id.inputSearch);
-
-        adapter = new ArrayAdapter<String>(this, R.layout.city_list,
-                R.id.product_name, words);
-        lv.setAdapter(adapter);
-
-        inputSearch.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-                MainActivity.this.adapter.getFilter().filter(cs);
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                          int arg3) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable arg0) {
-            }
-        });
-
-        inputSearch.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-                MainActivity.this.adapter.getFilter().filter(cs);
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                          int arg3) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable arg0) {
-            }
-        });
-
+        setContentView(R.layout.activity_main);
+        String instanceState;
+        if (savedInstanceState == null){
+            instanceState = "Первый запуск!";
+        }
+        else{
+            instanceState = "Повторный запуск!";
+        }
+        Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
+        btnSearch = findViewById(R.id.buttonSearch);
+        btnSearch.setOnClickListener(this);
+        getACity ();
     }
 
-}
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
+    }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle saveInstanceState){
+        super.onRestoreInstanceState(saveInstanceState);
+        Toast.makeText(getApplicationContext(), "Повторный запуск!! - onRestoreInstanceState()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle saveInstanceState){
+        super.onSaveInstanceState(saveInstanceState);
+        Toast.makeText(getApplicationContext(), "onSaveInstanceState()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonSearch:
+                Intent intent = new Intent(this, CityActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
+    private void getACity() {
+        tvViewCity = findViewById(R.id.textView_town);
+        tvViewCityTemp= findViewById (R.id.textView_temperature);
+        Intent intent = getIntent();
+        String city = intent.getStringExtra("citySelected");
+        tvViewCity.setText(city);
+        tvViewCityTemp.setText ("Temp в " + city);
+    }
+}
