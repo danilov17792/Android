@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00FF9800</color>
-    <color name="colorPrimaryDark">#00FF9800</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="this_town">#FFFFFF</color>
-    <color name="temperature">#FFFFFF</color>
-    <color name="pressure">#FFFFFF</color>
-    <color name="wind_speed">#FFFFFF</color>
-    <color name="city_list">#FFFFFF</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#67B3ADAF</color>
 </resources>

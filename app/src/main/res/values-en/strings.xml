@@ -1,9 +1,0 @@
-<resources>
-         <string name = "app_name"> Weather </string>
-         <string name = "this_town"> City </string>
-         <string name = "setting"> Settings </string>
-         <string name = "temperature"> Temperature </string>
-         <string name = "pressure"> Pressure </string>
-         <string name = "wind_speed"> Wind speed </string>
-         <string name = "search"> City or region </string>
-</resources>

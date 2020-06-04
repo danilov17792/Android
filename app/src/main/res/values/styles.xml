@@ -10,9 +10,4 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@android:color/primary_text_dark_nodisable</item>
-        <item name="colorControlActivated">@android:color/primary_text_dark_nodisable</item>
-    </style>
-
 </resources>
