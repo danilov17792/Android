@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AndroidGeek</string>
+    <string name="app_name">Погода</string>
+    <string name="empty_list">Empty list</string>
+    <string name="weather">
+    Температура: +25\n
+        \n
+    Давление: 740 мм.\n
+        \n
+    Скорость ветра: 0 м/с</string>
+
 </resources>
